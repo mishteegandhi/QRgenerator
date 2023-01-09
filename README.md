@@ -36,7 +36,7 @@ Make sure you have added the email in your Github Emails. For further informatio
 6) From the top right hand corner, under the Green Box called "Code" with an arrow, copy the link for this repository(OR copy the next command).
 7) Enter the following in your Terminal Window to get a copy of the repository on your local machine.
 ```
-git clone https://github.com/.git
+git clone https://github.com/mishteegandhi/QRgenerator.git
 ```
 8) Put your code and any other files in the folder they belong in.
 9) When it is time to push your changes to Github, go through the following.
