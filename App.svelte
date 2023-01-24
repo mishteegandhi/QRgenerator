@@ -35,20 +35,46 @@
         <div class="custom-select" style="width:150px; ">
           <select>
             <option value="0">Select file type:</option>
-            <option value="1">Image</option>
-            <option value="2">Text</option>
-            <option value="3">URL</option>
+            <option value="1">Text</option>
+            <option value="2">URL</option>            
           </select>
         </div>
+        <br /><br /><br /><br /><br />  
 
+        <form>
+          
+          <script>
+            
+          function storeInput() {
+            var input = document.getElementById("input").value;
+            console.log(input);
+            document.write(input);
 
-        <br /><br /><br /><br /><br /><br /><br />
-        <button class="button">Create QR Code</button>
+          }
+          
+        </script>
+          <input type="text" id="input">
+          <button type="submit" on:click={storeInput}>Submit</button>
+        </form>
+        
+        
+          
+        
       </div>
 
       <div class="column2 right1">
         <h2>Generate QR Code</h2>
         <h3>Colour</h3>
+        
+        <!-- <script>
+          var color = '#ff0000';
+          import QrCode from "svelte-qrcode"
+        </script>
+        <input bind:value={int} type="color" />
+        <div class="container">
+          <QrCode value="AAAAA" />
+        </div> -->
+
         <div class="custom-select" style="width:150px; ">
           <select>
             <option value="0">Select file type:</option>
@@ -144,9 +170,9 @@
         </div>
         <br /><br /><br /><br /><br /><br /><br />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a href="1.jpg" download="1.jpg">
         <button class="btn"><i class="fa fa-download"></i>    Download</button>
-        <a href="" download="">
-          <img src="/images/myw3schoolsimage.jpg" alt="W3Schools" width="104" height="142">
+
         </a>
       </div>
     </div>
