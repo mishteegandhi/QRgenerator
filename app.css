@@ -157,7 +157,7 @@ img {
     background-color: rgba(0, 0, 0, 0.1);
   }
   
-  .button {
+  #button {
     background-color: #04AA6D;
     border: none;
     color: white;
@@ -166,7 +166,7 @@ img {
     text-decoration: none;
     margin: auto;
     font-size: 16px;
-    margin-left: 175px;
+    margin-left: 200px;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -182,5 +182,5 @@ img {
   }
   
   #input{
-    margin-left: 125px; 
+    margin-left: 150px; 
   }
