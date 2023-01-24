@@ -1,7 +1,15 @@
 <script>
+  let bgcolour = '#FFFFFF';
+  let colour = '#000000';
+  import QrCode from "svelte-qrcode";
+  let a = "Get stated with QR";
+  function storeInput() {
+            a = document.getElementById("input").value;
+            colour = document.getElementById("fc").value;
+            bgcolour = document.getElementById("bg").value;
+            console.log(input);
 
-  
-
+          }
 </script>
 <main>
   <!-- NAVBAR -->
@@ -10,22 +18,14 @@
       <div class="navbar-left">
         <ul>
           <b>
-            <li><a href="#">Logo</a></li>
-            <li><a href="#">Create</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Learn</a></li>
-            <li><a href="#">Download</a></li></b
-          >
+            <li><a href="#">Logo</a></li></b>
         </ul>
       </div>
       <div class="navbar-right">
         <ul>
           <b>
-            <li><a href="#" id="signin">Sign in</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQ</a></li></b
-          >
+            <li><a href="#ab">About</a></li>
+            <li><a href="#f">FAQ</a></li></b>
         </ul>
       </div>
     </nav>
@@ -35,44 +35,33 @@
   <div class="container">
     <div class="row">
       <div class="column1 left1">
-        <img src="./src/1.jpg" alt="QR CODE" /><br />
+        <QrCode value = {a} color = {colour} background = {bgcolour}/>
+        <br />
 
         <div class="custom-select" style="width:150px; ">
           <select>
             <option value="0">Select file type:</option>
             <option value="1">Text</option>
-            <option value="2">URL</option>            
+            <option value="2">URL</option>
           </select>
         </div>
-        <br /><br /><br /><br /><br />  
+        <br/>
 
         <form>
-          
-          <script>
-            
-          function storeInput() {
-            var input = document.getElementById("input").value;
-            console.log(input);
-            // document.write(input);
-
-          }
-          
-        </script>
-          <input type="text" id="input">
-          <button id="button" type="submit" on:click={storeInput}>Submit</button>
+          <input type="text" id="input" size =25>
+          <br/><br/>
+          <button id ="button" type="submit" on:click={storeInput}>Submit</button>
         </form>
-        
-        
-          
-        
+
       </div>
 
       <div class="column2 right1">
         <h2>Generate QR Code</h2>
-        <h3>Colour</h3>
-        
-        
-
+        <h3>QR Colour</h3>
+        <input id ="fc" bind:value={colour} type="color" />
+        <h3>Background Colour</h3>
+        <input id ="bg" bind:value={bgcolour} type="color" />
+        <br/><br/>
         <div class="custom-select" style="width:150px; ">
           <select>
             <option value="0">Select file type:</option>
@@ -166,10 +155,10 @@
           </script>
 
         </div>
-        <br /><br /><br /><br /><br /><br /><br />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <br /><br />
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
-        <!-- <button id="download-btn" onclick="download()">Download</button>
+         <button id="download-btn" onclick="download()">Download</button>
         <script>
           function download() { 
             var y = document.getElementById("file-type").value;
@@ -200,29 +189,26 @@
         
 
         <a href=download download=download>
-        <button class="btn"><i class="fa fa-download"></i>    Download</button>
+        <button class="btn"><i class="fa fa-download"></i>Download</button>
         </a>
         
       </div>
     </div>
   </div>
 
+
   <!-- FAQ SECTION -->
   <div class="faq">
-    <h1>FAQ</h1>
-    <h2>Any Queries write to us..</h2>
+    <h1 id="f">FAQ</h1>
 
     <div class="row">
       <div class="column left" style="background-color:#0000;">
         <p />
         <h3>
-          1. Check most frequently asked questions<br />
+          Check most frequently asked questions<br />
           and get your queries solved.
         </h3>
         <p />
-        <h3>
-          2. If still not cleared with your query click<br /> here to contact us...
-        </h3>
       </div>
 
       <div class="column right" style="background-color:#0000;">
@@ -270,4 +256,17 @@
       </div>
     </div>
   </div>
+   <!-- ABOUT SECTION -->
+   <!--
+   <div class="about">
+    <h1 id="ab">About us</h1>
+
+    <div class="row">
+      <div  style="background-color:#0000;">
+        <p />
+        <h3>
+        </h3>
+    </div>
+  </div>
+-->
 </main>
